@@ -228,7 +228,12 @@ var boundaryDescription;
 // EXACT TALUK ASSET
 // ---------------------------------------------------------------
 
-if (CONFIG.useCustomTalukAsset) {
+var isCustomAssetConfigured =
+  CONFIG.useCustomTalukAsset &&
+  CONFIG.customTalukAssetId &&
+  !CONFIG.customTalukAssetId.includes('YOUR_USERNAME');
+
+if (isCustomAssetConfigured) {
 
   print(
     'Using custom taluk boundary asset:',
@@ -258,8 +263,15 @@ if (CONFIG.useCustomTalukAsset) {
 
 } else {
 
+  if (CONFIG.useCustomTalukAsset) {
+    print(
+      'NOTICE: customTalukAssetId still contains placeholder YOUR_USERNAME. ' +
+      'Falling back to public administrative boundary.'
+    );
+  }
+
   print(
-    'WARNING: Exact taluk asset is not enabled.'
+    'WARNING: Exact taluk asset is not enabled or placeholder used.'
   );
 
   print(

@@ -72,11 +72,11 @@ export const SettingsPage: React.FC = () => {
               type="text"
               value={apiUrl}
               onChange={(e) => setApiUrl(e.target.value)}
-              placeholder="http://localhost:8000"
+              placeholder="http://localhost:8080/api"
               className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"
             />
             <p className="text-[11px] text-slate-500">
-              Current environment variable: <code className="text-slate-400">{import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}</code>
+              Current environment variable: <code className="text-slate-400">{import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'}</code>
             </p>
           </div>
         </div>

@@ -78,6 +78,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/classifications/**").permitAll()
                         .requestMatchers("/api/satellite/**").permitAll()
                         .requestMatchers("/api/models/**").permitAll()
+                        .requestMatchers("/api/model/**").permitAll()
+                        .requestMatchers("/api/analysis/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/reports/**").permitAll()
                         // Role-based constraints on Study Areas
                         .requestMatchers(HttpMethod.POST, "/api/study-areas").hasAnyRole("ADMIN", "ANALYST")
