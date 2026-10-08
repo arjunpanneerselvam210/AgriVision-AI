@@ -72,6 +72,13 @@ public class SecurityConfig {
                         ).permitAll()
                         // Preflight OPTIONS requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        // Public Read-only Geospatial & Map Visualization endpoints
+                        .requestMatchers(HttpMethod.GET, "/api/study-areas/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/fields/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/classifications/**").permitAll()
+                        .requestMatchers("/api/satellite/**").permitAll()
+                        .requestMatchers("/api/models/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/reports/**").permitAll()
                         // Role-based constraints on Study Areas
                         .requestMatchers(HttpMethod.POST, "/api/study-areas").hasAnyRole("ADMIN", "ANALYST")
                         .requestMatchers(HttpMethod.PUT, "/api/study-areas/**").hasAnyRole("ADMIN", "ANALYST")

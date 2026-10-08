@@ -1,0 +1,125 @@
+{
+  "active_model_id": "model-c2d486ef",
+  "models": {
+    "model-rf-baseline-v1": {
+      "model_id": "model-rf-baseline-v1",
+      "name": "AgriVision-RF-Baseline",
+      "version": "v1.0.0",
+      "algorithm": "RANDOM_FOREST",
+      "classes": [
+        "PADDY",
+        "BANANA",
+        "OTHER"
+      ],
+      "feature_names": [
+        "B2",
+        "B3",
+        "B4",
+        "B8",
+        "B11",
+        "NDVI",
+        "NDWI",
+        "LSWI",
+        "VV",
+        "VH",
+        "VV_VH_ratio"
+      ],
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "kappa": 1.0,
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            12
+          ]
+        ],
+        "classes": [
+          "PADDY",
+          "BANANA",
+          "OTHER"
+        ],
+        "mae": null,
+        "rmse": null,
+        "mape": null,
+        "r2": null
+      },
+      "created_at": "2026-10-08T12:02:59.632558",
+      "is_active": true,
+      "description": "AgriVision multi-source optical (Sentinel-2) & SAR (Sentinel-1) crop classifier"
+    },
+    "model-c2d486ef": {
+      "model_id": "model-c2d486ef",
+      "name": "AgriVision-PyTorch-CropNet",
+      "version": "v2.0.0",
+      "algorithm": "PYTORCH_NN",
+      "classes": [
+        "PADDY",
+        "BANANA",
+        "OTHER"
+      ],
+      "feature_names": [
+        "B2",
+        "B3",
+        "B4",
+        "B8",
+        "B11",
+        "NDVI",
+        "NDWI",
+        "LSWI",
+        "VV",
+        "VH",
+        "VV_VH_ratio"
+      ],
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "kappa": 1.0,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "classes": [
+          "PADDY",
+          "BANANA",
+          "OTHER"
+        ],
+        "mae": null,
+        "rmse": null,
+        "mape": null,
+        "r2": null
+      },
+      "created_at": "2026-10-08T12:03:48.879899",
+      "is_active": true,
+      "description": "AgriVision multi-source optical (Sentinel-2) & SAR (Sentinel-1) crop classifier"
+    }
+  }
+}

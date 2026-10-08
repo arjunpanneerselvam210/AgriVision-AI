@@ -1,10 +1,13 @@
+com\agrivision\exception\EarthEngineProcessingException.class
 com\agrivision\controller\SatelliteAnalysisController.class
 com\agrivision\dto\PageResponse.class
 com\agrivision\dto\RefreshTokenRequest$RefreshTokenRequestBuilder.class
+com\agrivision\service\MlServiceClient$PredictionResponseDto$PredictionResponseDtoBuilder.class
 com\agrivision\dto\CropAcreageSummaryDto$CropAcreageSummaryDtoBuilder.class
 com\agrivision\dto\ErrorResponse$ErrorResponseBuilder.class
 com\agrivision\dto\ModelAblationDto$ModelAblationDtoBuilder.class
 com\agrivision\mapper\EntityDtoMapper$1.class
+com\agrivision\service\MlServiceClient$PredictionItemDto$PredictionItemDtoBuilder.class
 com\agrivision\specification\FieldParcelSpecification.class
 com\agrivision\repository\StudyAreaRepository.class
 com\agrivision\service\SatelliteAnalysisService.class
@@ -12,11 +15,14 @@ com\agrivision\dto\CropClassificationDto$CropClassificationDtoBuilder.class
 com\agrivision\dto\SatelliteAnalysisDto$SatelliteAnalysisDtoBuilder.class
 com\agrivision\entity\CropClassification$CropClassificationBuilder.class
 com\agrivision\controller\StudyAreaController.class
+com\agrivision\service\MlServiceClient.class
+com\agrivision\service\EarthEngineService.class
 com\agrivision\dto\ErrorResponse.class
 com\agrivision\service\ModelService.class
 com\agrivision\dto\ModelMetricsDto$ModelMetricsDtoBuilder.class
 com\agrivision\dto\StudyAreaDto$StudyAreaDtoBuilder.class
 com\agrivision\security\CustomUserDetailsService.class
+com\agrivision\dto\SatelliteAnalysisStatusDto$SatelliteAnalysisStatusDtoBuilder.class
 com\agrivision\config\DataInitializer.class
 com\agrivision\config\OpenApiConfig.class
 com\agrivision\dto\CreateStudyAreaRequest$CreateStudyAreaRequestBuilder.class
@@ -28,6 +34,7 @@ com\agrivision\service\CropClassificationService.class
 com\agrivision\dto\CropClassificationDto.class
 com\agrivision\entity\CropType.class
 com\agrivision\security\JwtAuthenticationFilter.class
+com\agrivision\service\MlServiceClient$PredictionResponseDto.class
 com\agrivision\dto\RefreshTokenRequest.class
 com\agrivision\dto\PageResponse$PageResponseBuilder.class
 com\agrivision\repository\UserRepository.class
@@ -37,6 +44,7 @@ com\agrivision\security\UserPrincipal.class
 com\agrivision\exception\ConflictException.class
 com\agrivision\exception\BadRequestException.class
 com\agrivision\entity\FieldParcel$FieldParcelBuilder.class
+com\agrivision\dto\CreateSatelliteAnalysisRequest.class
 com\agrivision\dto\FieldParcelDto.class
 com\agrivision\controller\UserController.class
 com\agrivision\security\CustomAccessDeniedHandler.class
@@ -48,8 +56,10 @@ com\agrivision\dto\LoginRequest.class
 com\agrivision\controller\FieldParcelController.class
 com\agrivision\controller\AuthController.class
 com\agrivision\service\AuthService.class
+com\agrivision\dto\SatelliteAnalysisStatusDto.class
 com\agrivision\dto\StudyAreaReportDto$StudyAreaReportDtoBuilder.class
 com\agrivision\exception\ResourceNotFoundException.class
+com\agrivision\dto\CreateSatelliteAnalysisRequest$CreateSatelliteAnalysisRequestBuilder.class
 com\agrivision\dto\StudyAreaDto.class
 com\agrivision\entity\StudyArea.class
 com\agrivision\entity\User.class
@@ -67,6 +77,7 @@ com\agrivision\mapper\EntityDtoMapper$2.class
 com\agrivision\entity\StudyArea$StudyAreaBuilder.class
 com\agrivision\exception\UnauthorizedException.class
 com\agrivision\security\UserPrincipal$UserPrincipalBuilder.class
+com\agrivision\service\MlServiceClient$PredictionItemDto.class
 com\agrivision\dto\UserDto.class
 com\agrivision\dto\ApiResponse.class
 com\agrivision\dto\UpdateStudyAreaRequest$UpdateStudyAreaRequestBuilder.class

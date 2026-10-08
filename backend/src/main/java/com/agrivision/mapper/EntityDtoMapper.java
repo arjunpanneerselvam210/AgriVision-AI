@@ -102,6 +102,10 @@ public class EntityDtoMapper {
                 .cloudCover(s.getCloudCover())
                 .processingLevel(s.getProcessingLevel())
                 .status(s.getStatus())
+                .parametersJson(s.getParametersJson())
+                .metadataJson(s.getMetadataJson())
+                .failureReason(s.getFailureReason())
+                .completedAt(s.getCompletedAt())
                 .createdAt(s.getCreatedAt())
                 .build();
     }

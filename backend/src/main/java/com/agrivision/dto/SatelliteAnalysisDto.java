@@ -21,5 +21,9 @@ public class SatelliteAnalysisDto {
     private Double cloudCover;
     private String processingLevel;
     private String status;
+    private String parametersJson;
+    private String metadataJson;
+    private String failureReason;
+    private Instant completedAt;
     private Instant createdAt;
 }

@@ -43,8 +43,17 @@ public class SatelliteAnalysis extends BaseAuditEntity {
 
     @Column(nullable = false, length = 30)
     @Builder.Default
-    private String status = "COMPLETED";
+    private String status = "REQUESTED";
+
+    @Column(name = "parameters_json", columnDefinition = "TEXT")
+    private String parametersJson;
 
     @Column(name = "metadata_json", columnDefinition = "TEXT")
     private String metadataJson;
+
+    @Column(name = "failure_reason", columnDefinition = "TEXT")
+    private String failureReason;
+
+    @Column(name = "completed_at")
+    private Instant completedAt;
 }

@@ -12,6 +12,7 @@ D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\StudyAreaCon
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\UserController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\ApiResponse.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\AuthResponse.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\CreateSatelliteAnalysisRequest.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\CreateStudyAreaRequest.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\CropAcreageSummaryDto.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\CropClassificationDto.java
@@ -25,6 +26,7 @@ D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\PageResponse.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\RefreshTokenRequest.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\RegisterRequest.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\SatelliteAnalysisDto.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\SatelliteAnalysisStatusDto.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\StudyAreaDto.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\StudyAreaReportDto.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\UpdateStudyAreaRequest.java
@@ -41,6 +43,7 @@ D:\Mapathon\Project\backend\src\main\java\com\agrivision\entity\StudyArea.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\entity\User.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\BadRequestException.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\ConflictException.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\EarthEngineProcessingException.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\GlobalExceptionHandler.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\ResourceNotFoundException.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\exception\UnauthorizedException.java
@@ -59,7 +62,9 @@ D:\Mapathon\Project\backend\src\main\java\com\agrivision\security\JwtTokenProvid
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\security\UserPrincipal.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\AuthService.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\CropClassificationService.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\EarthEngineService.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\FieldParcelService.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\MlServiceClient.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\ModelService.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\ReportService.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\service\SatelliteAnalysisService.java

@@ -20,6 +20,7 @@ import java.util.UUID;
 public class ModelController {
 
     private final ModelService modelService;
+    private final com.agrivision.service.MlServiceClient mlServiceClient;
 
     @GetMapping
     @Operation(summary = "List machine learning models", description = "Retrieves all registered ML models")
@@ -40,5 +41,16 @@ public class ModelController {
     public ResponseEntity<ApiResponse<ModelMetricsDto>> getModelMetrics(@PathVariable UUID id) {
         ModelMetricsDto metrics = modelService.getModelMetrics(id);
         return ResponseEntity.ok(ApiResponse.success(metrics));
+    }
+
+    @PostMapping("/predict")
+    @Operation(summary = "Predict crop classification via Python ML microservice", description = "Calls independent Python FastAPI ML service to run inference using Sentinel-1 SAR and Sentinel-2 optical features")
+    public ResponseEntity<ApiResponse<com.agrivision.service.MlServiceClient.PredictionResponseDto>> predictCrop(
+            @RequestBody java.util.Map<String, Object> body) {
+        @SuppressWarnings("unchecked")
+        java.util.List<java.util.Map<String, Object>> features = (java.util.List<java.util.Map<String, Object>>) body.get("features");
+        String modelId = (String) body.get("model_id");
+        com.agrivision.service.MlServiceClient.PredictionResponseDto result = mlServiceClient.predict(features, modelId);
+        return ResponseEntity.ok(ApiResponse.success(result));
     }
 }
