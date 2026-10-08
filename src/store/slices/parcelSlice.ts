@@ -15,6 +15,9 @@ const initialState: ParcelState = {
   selectedParcel: null,
   filters: {
     cropClass: 'ALL',
+    crop: 'all',
+    confidence: 'all',
+    studyAreaId: undefined,
     searchQuery: '',
     sortBy: 'area_ha',
     sortOrder: 'desc',
@@ -60,6 +63,9 @@ export const parcelSlice = createSlice({
     resetFilters: (state) => {
       state.filters = {
         cropClass: 'ALL',
+        crop: 'all',
+        confidence: 'all',
+        studyAreaId: undefined,
         searchQuery: '',
         sortBy: 'area_ha',
         sortOrder: 'desc',

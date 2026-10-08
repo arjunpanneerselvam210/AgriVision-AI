@@ -18,6 +18,18 @@ public class FieldParcelSpecification {
             Double maxAreaHa,
             Double minNdvi,
             String searchQuery) {
+        return filter(studyAreaId, cropClass, minAreaHa, maxAreaHa, minNdvi, null, null, searchQuery);
+    }
+
+    public static Specification<FieldParcel> filter(
+            UUID studyAreaId,
+            CropType cropClass,
+            Double minAreaHa,
+            Double maxAreaHa,
+            Double minNdvi,
+            Double minConfidence,
+            Double maxConfidence,
+            String searchQuery) {
 
         return (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -40,6 +52,14 @@ public class FieldParcelSpecification {
 
             if (minNdvi != null) {
                 predicates.add(cb.greaterThanOrEqualTo(root.get("meanNdvi"), minNdvi));
+            }
+
+            if (minConfidence != null) {
+                predicates.add(cb.greaterThanOrEqualTo(root.get("confidence"), minConfidence));
+            }
+
+            if (maxConfidence != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("confidence"), maxConfidence));
             }
 
             if (searchQuery != null && !searchQuery.trim().isEmpty()) {

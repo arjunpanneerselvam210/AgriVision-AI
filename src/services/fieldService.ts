@@ -86,6 +86,29 @@ export const fieldService = {
       }
     );
   },
+
+  /**
+   * Retrieves real field parcel geometries as GeoJSON FeatureCollection
+   */
+  async getFieldsGeoJson(
+    params?: FieldQueryParams & { minConfidence?: number; maxConfidence?: number },
+    signal?: AbortSignal
+  ): Promise<any> {
+    const searchParams = new URLSearchParams();
+    if (params?.studyAreaId) searchParams.append('studyAreaId', params.studyAreaId);
+    if (params?.cropClass) searchParams.append('cropClass', String(params.cropClass));
+    if (params?.minAreaHa !== undefined) searchParams.append('minAreaHa', String(params.minAreaHa));
+    if (params?.maxAreaHa !== undefined) searchParams.append('maxAreaHa', String(params.maxAreaHa));
+    if (params?.minNdvi !== undefined) searchParams.append('minNdvi', String(params.minNdvi));
+    if (params?.minConfidence !== undefined) searchParams.append('minConfidence', String(params.minConfidence));
+    if (params?.maxConfidence !== undefined) searchParams.append('maxConfidence', String(params.maxConfidence));
+    if (params?.search) searchParams.append('search', params.search);
+
+    const query = searchParams.toString();
+    const url = query ? `/fields/geojson?${query}` : '/fields/geojson';
+    const response = await apiClient.get<ApiResponse<any>>(url, { signal });
+    return response.data.data || { type: 'FeatureCollection', features: [], totalFeatures: 0 };
+  },
 };
 
 export default fieldService;

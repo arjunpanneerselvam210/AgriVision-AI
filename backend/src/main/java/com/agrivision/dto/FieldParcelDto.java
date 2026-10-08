@@ -26,6 +26,9 @@ public class FieldParcelDto {
     private Double meanVhMinusVvDb;
     private CropType cropClass;
     private Double confidence;
+    private String modelVersion;
+    private UUID satelliteAnalysisId;
+    private Instant analysisDate;
     private String taluk;
     private String village;
     private String geojsonGeometry;

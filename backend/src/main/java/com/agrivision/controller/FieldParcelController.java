@@ -33,12 +33,32 @@ public class FieldParcelController {
             @RequestParam(required = false) @Parameter(description = "Minimum area in hectares") Double minAreaHa,
             @RequestParam(required = false) @Parameter(description = "Maximum area in hectares") Double maxAreaHa,
             @RequestParam(required = false) @Parameter(description = "Minimum mean NDVI value") Double minNdvi,
+            @RequestParam(required = false) @Parameter(description = "Minimum confidence threshold (0.0 to 1.0)") Double minConfidence,
+            @RequestParam(required = false) @Parameter(description = "Maximum confidence threshold (0.0 to 1.0)") Double maxConfidence,
             @RequestParam(required = false) @Parameter(description = "Search query matching segment ID, village, or taluk") String search,
             @PageableDefault(size = 20, sort = "areaHa", direction = Sort.Direction.DESC) Pageable pageable) {
 
         PageResponse<FieldParcelDto> response = fieldParcelService.getFields(
-                studyAreaId, cropClass, minAreaHa, maxAreaHa, minNdvi, search, pageable);
+                studyAreaId, cropClass, minAreaHa, maxAreaHa, minNdvi, minConfidence, maxConfidence, search, pageable);
         return ResponseEntity.ok(ApiResponse.success(response));
+    }
+
+    @GetMapping("/geojson")
+    @Operation(summary = "Get fields as GeoJSON FeatureCollection",
+               description = "Returns real PostGIS geometries as a standard RFC 7946 GeoJSON FeatureCollection for Leaflet / GIS clients")
+    public ResponseEntity<ApiResponse<java.util.Map<String, Object>>> getFieldsGeoJson(
+            @RequestParam(required = false) @Parameter(description = "Study area UUID") UUID studyAreaId,
+            @RequestParam(required = false) @Parameter(description = "Filter by crop class (PADDY, BANANA, OTHER)") CropType cropClass,
+            @RequestParam(required = false) @Parameter(description = "Minimum area in hectares") Double minAreaHa,
+            @RequestParam(required = false) @Parameter(description = "Maximum area in hectares") Double maxAreaHa,
+            @RequestParam(required = false) @Parameter(description = "Minimum mean NDVI value") Double minNdvi,
+            @RequestParam(required = false) @Parameter(description = "Minimum confidence threshold (0.0 to 1.0)") Double minConfidence,
+            @RequestParam(required = false) @Parameter(description = "Maximum confidence threshold (0.0 to 1.0)") Double maxConfidence,
+            @RequestParam(required = false) @Parameter(description = "Search query matching segment ID, village, or taluk") String search) {
+
+        java.util.Map<String, Object> geoJson = fieldParcelService.getFieldsGeoJson(
+                studyAreaId, cropClass, minAreaHa, maxAreaHa, minNdvi, minConfidence, maxConfidence, search);
+        return ResponseEntity.ok(ApiResponse.success(geoJson));
     }
 
     @GetMapping("/{id}")

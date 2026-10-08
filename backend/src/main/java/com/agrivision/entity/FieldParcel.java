@@ -65,6 +65,15 @@ public class FieldParcel extends BaseAuditEntity {
     @Column(name = "confidence")
     private Double confidence;
 
+    @Column(name = "model_version", length = 50)
+    private String modelVersion;
+
+    @Column(name = "satellite_analysis_id")
+    private UUID satelliteAnalysisId;
+
+    @Column(name = "analysis_date")
+    private java.time.Instant analysisDate;
+
     @Column(length = 80)
     private String taluk;
 

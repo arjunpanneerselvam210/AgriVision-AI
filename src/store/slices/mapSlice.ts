@@ -12,8 +12,10 @@ interface MapState {
     showBanana: boolean;
     showOther: boolean;
     showBoundaries: boolean;
+    showStudyAreaBoundary: boolean;
     showPilotSector: boolean;
     showNdviHeatmap: boolean;
+    polygonOpacity: number;
   };
   inspectorMode: boolean;
   inspectedCoords: [number, number] | null;
@@ -28,12 +30,23 @@ const initialState: MapState = {
     showBanana: true,
     showOther: true,
     showBoundaries: true,
+    showStudyAreaBoundary: true,
     showPilotSector: true,
     showNdviHeatmap: false,
+    polygonOpacity: 0.65,
   },
   inspectorMode: false,
   inspectedCoords: null,
 };
+
+export type LayerToggleKey =
+  | 'showPaddy'
+  | 'showBanana'
+  | 'showOther'
+  | 'showBoundaries'
+  | 'showStudyAreaBoundary'
+  | 'showPilotSector'
+  | 'showNdviHeatmap';
 
 export const mapSlice = createSlice({
   name: 'map',
@@ -48,10 +61,10 @@ export const mapSlice = createSlice({
     setBaseMap: (state, action: PayloadAction<BaseMapType>) => {
       state.baseMap = action.payload;
     },
-    toggleLayer: (state, action: PayloadAction<keyof MapState['layers']>) => {
+    toggleLayer: (state, action: PayloadAction<LayerToggleKey>) => {
       state.layers[action.payload] = !state.layers[action.payload];
     },
-    setLayerVisibility: (state, action: PayloadAction<{ layer: keyof MapState['layers']; visible: boolean }>) => {
+    setLayerVisibility: (state, action: PayloadAction<{ layer: LayerToggleKey; visible: boolean }>) => {
       state.layers[action.payload.layer] = action.payload.visible;
     },
     setInspectorMode: (state, action: PayloadAction<boolean>) => {
@@ -59,6 +72,9 @@ export const mapSlice = createSlice({
     },
     setInspectedCoords: (state, action: PayloadAction<[number, number] | null>) => {
       state.inspectedCoords = action.payload;
+    },
+    setPolygonOpacity: (state, action: PayloadAction<number>) => {
+      state.layers.polygonOpacity = Math.max(0.1, Math.min(1.0, action.payload));
     },
     resetMapView: (state) => {
       state.center = DEFAULT_MAP_CENTER;
@@ -73,6 +89,7 @@ export const {
   setBaseMap,
   toggleLayer,
   setLayerVisibility,
+  setPolygonOpacity,
   setInspectorMode,
   setInspectedCoords,
   resetMapView,
