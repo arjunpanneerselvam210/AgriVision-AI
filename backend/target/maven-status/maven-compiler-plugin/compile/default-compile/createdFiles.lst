@@ -65,6 +65,7 @@ com\agrivision\entity\StudyArea.class
 com\agrivision\entity\User.class
 com\agrivision\dto\MlModelDto.class
 com\agrivision\dto\FieldParcelDto$FieldParcelDtoBuilder.class
+com\agrivision\controller\AnalysisController.class
 com\agrivision\dto\AuthResponse.class
 com\agrivision\dto\LoginRequest$LoginRequestBuilder.class
 com\agrivision\dto\UpdateUserRequest$UpdateUserRequestBuilder.class
@@ -97,6 +98,7 @@ com\agrivision\AgriVisionApplication.class
 com\agrivision\dto\AuthResponse$AuthResponseBuilder.class
 com\agrivision\security\JwtAuthenticationEntryPoint.class
 com\agrivision\dto\MlModelDto$MlModelDtoBuilder.class
+com\agrivision\controller\SatelliteLayerController.class
 com\agrivision\entity\User$UserBuilder.class
 com\agrivision\dto\ApiResponse$ApiResponseBuilder.class
 com\agrivision\dto\UserDto$UserDtoBuilder.class

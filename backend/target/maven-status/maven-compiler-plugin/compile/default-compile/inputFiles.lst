@@ -2,12 +2,14 @@ D:\Mapathon\Project\backend\src\main\java\com\agrivision\AgriVisionApplication.j
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\config\DataInitializer.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\config\OpenApiConfig.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\config\SecurityConfig.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\AnalysisController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\AuthController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\CropClassificationController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\FieldParcelController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\ModelController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\ReportController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\SatelliteAnalysisController.java
+D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\SatelliteLayerController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\StudyAreaController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\controller\UserController.java
 D:\Mapathon\Project\backend\src\main\java\com\agrivision\dto\ApiResponse.java
